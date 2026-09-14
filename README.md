@@ -1,14 +1,23 @@
-# 📝 notePro — AI-Enhanced Meeting Note Application
+# 📝 notePro — AI-Enhanced Meeting Notes
 
-**notePro** is a modern, full-stack implementation of the AI-enhanced meeting note-taking workflow inspired by [Granola.ai](https://docs.granola.ai/help-center/taking-notes/ai-enhanced-notes). 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Vercel-black?style=for-the-badge&logo=vercel)](https://note-pro-pink.vercel.app/)
+[![React](https://img.shields.io/badge/Frontend-React%2018%20%2B%20Vite-61dafb?style=for-the-badge&logo=react)](https://react.dev/)
+[![FastAPI](https://img.shields.io/badge/Backend-FastAPI%20Python%203.11-009688?style=for-the-badge&logo=fastapi)](https://fastapi.tiangolo.com/)
+[![Streamlit](https://img.shields.io/badge/Companion-Streamlit%20Cloud-FF4B4B?style=for-the-badge&logo=streamlit)](https://streamlit.io/)
+[![AI Fusion](https://img.shields.io/badge/AI%20Engine-Gemini%202.5%20Flash-4285F4?style=for-the-badge&logo=google)](https://ai.google.dev/)
 
-Unlike legacy meeting bots (Otter, Fireflies) that intrusively join Zoom or Google Meet calls as external participants, **notePro** runs locally and starts audio transcription **only when the user opens a meeting note or clicks record**.
+> **Live Deployment:** [note-pro-pink.vercel.app](https://note-pro-pink.vercel.app/)  
+> **GitHub Repository:** [github.com/sechan9999/notePro](https://github.com/sechan9999/notePro)
+
+**notePro** is a modern, privacy-first implementation of the AI-enhanced meeting note workflow inspired by [Granola.ai](https://docs.granola.ai/help-center/taking-notes/ai-enhanced-notes). 
+
+Unlike legacy meeting bots (Otter, Fireflies) that intrusively join Zoom or Google Meet calls as external participants, **notePro** operates on your machine: audio transcription activates **only when you start typing notes or click record**.
 
 ---
 
-## ⚡ notePro's Core Architecture: The 3-Way Note Fusion
+## ⚡ Core Concept: The Granola 3-Way Note Fusion
 
-Standard AI note apps replace your notes with a generic, verbose summary. **notePro** preserves your thoughts and uses a **3-way fusion engine**:
+Standard AI note tools replace your thoughts with a verbose, generic AI dump. **notePro** honors your typed bullet points as the primary anchor and performs a **3-way fusion**:
 
 ```
  ┌────────────────────────┐     ┌────────────────────────┐     ┌────────────────────────┐
@@ -26,97 +35,103 @@ Standard AI note apps replace your notes with a generic, verbose summary. **note
                                     ▼
        ┌──────────────────────────────────────────────────────────┐
        │               notePro AI-Enhanced Document               │
-       │  • ⚡ Executive Summary (2-3 crisp sentences)            │
-       │  • 🎯 Key Decisions (Locked agreements)                  │
+       │  • ⚡ Executive Summary (2-3 crisp outcome sentences)    │
+       │  • 🎯 Key Decisions (Locked agreements & milestones)     │
        │  • 🔍 User Bullet Expansions (Context + verbatim quotes) │
-       │  • ✅ Action Items (Owner + Deadline + Context)          │
+       │  • 📋 Action Items (Task + Owner + Deadline + Context)   │
+       │  • 📋 Markdown Export (1-click clipboard copy)          │
        └──────────────────────────────────────────────────────────┘
 ```
 
 ---
 
+## ✨ Key Features
+
+- **🎙️ On-Demand Audio Capture**: Web Audio API with real-time waveform visualizer and browser Web Speech API for immediate live transcription.
+- **📝 Raw Notes Editor**: Frictionless bullet-point note-taking with automatic local persistence (`localStorage`).
+- **✨ 3-Way Note Synthesis**: Enhances your handwritten bullets with exact quotes, latency metrics, and attendee consensus without overwriting your original intent.
+- **🌐 Dual-Mode Deployment**:
+  - **Standalone Vercel App**: Runs 100% client-side with persistent mock storage and instant client-side AI fusion heuristics.
+  - **Full-Stack Hybrid**: Seamlessly connects to the FastAPI backend with Deepgram Nova-2 and Google Gemini 2.5 Flash when available.
+- **📊 Streamlit Companion**: Single-file Python deployment (`streamlit_app.py`) for Streamlit Community Cloud.
+- **📋 1-Click Markdown Export**: Formatted markdown copy button for Notion, Slack, or GitHub issues.
+
+---
+
 ## 🛠️ Architecture & Tech Stack
 
-| Layer | Technology | Description |
+| Layer | Technology | Details |
 | :--- | :--- | :--- |
-| **Frontend UI** | **React + Vite** | notePro minimalist dark editor, live audio waveform, split-pane view |
-| **Audio Capture** | **Web Audio API** | Microphone (`getUserMedia`) and optional system/tab audio (`getDisplayMedia`) |
-| **Live STT** | **Deepgram Nova-2 / Gemini Audio / Web Speech** | Multi-provider transcription pipeline with speaker diarization |
-| **AI Note Fusion** | **Google Gemini 2.5 / 3 Flash** | Dual-pass prompt combining user notes with transcript citations |
-| **Backend API** | **FastAPI (Python 3.11)** | High-speed REST endpoints and JSON meeting persistence |
+| **Frontend Web App** | **React 18 + Vite** | Warm dark aesthetic, Lucide icons, responsive split-pane workbench |
+| **Audio Pipeline** | **Web Audio API + Web Speech** | Zero-dependency microphone capture, volume metering, live speech streaming |
+| **Backend REST Server** | **FastAPI + Uvicorn** | Python 3.11 endpoints for meeting CRUD, audio upload, and AI dispatch |
+| **STT Engine** | **Deepgram Nova-2 / Gemini Audio** | High-accuracy audio transcription with speaker diarization |
+| **AI Note Engine** | **Google Gemini 2.5 Flash** | Structured JSON schema generation honoring user note anchors |
+| **Cloud Hosting** | **Vercel & Streamlit Cloud** | Continuous deployment on push to `main` |
 
 ---
 
 ## 🚀 Quickstart Guide
 
-### 1. Backend Setup
-In a terminal:
-```bash
-# (Optional) Set your API keys in environment or .env
-set GEMINI_API_KEY=your_key_here
-set DEEPGRAM_API_KEY=your_key_here
+### Option 1: Live Web App (Zero Setup)
+Visit the deployed app directly: [https://note-pro-pink.vercel.app/](https://note-pro-pink.vercel.app/)
 
-# Run backend API on port 8000
+### Option 2: Local Full-Stack Development
+
+#### 1. Backend Server
+```bash
+cd backend
+pip install -r requirements.txt
+
+# (Optional) Set your API keys for Gemini / Deepgram
+export GEMINI_API_KEY="your-gemini-key"
+export DEEPGRAM_API_KEY="your-deepgram-key"
+
+# Run FastAPI server on port 8000
 python -m uvicorn backend.main:app --host 0.0.0.0 --port 8000 --reload
 ```
 
-### 2. Frontend Setup
-In a second terminal:
+#### 2. Frontend Client
 ```bash
 cd frontend
+npm install
 npm run dev
 ```
+Open **`http://localhost:5173`** in your browser.
 
-Visit **`http://localhost:5173`** in your browser.
-
-### 3. Streamlit Native App (Local & Streamlit Cloud)
-You can also run notePro directly via Streamlit:
+### Option 3: Streamlit App
 ```bash
+pip install streamlit google-genai
 streamlit run streamlit_app.py
 ```
 
 ---
 
-## 🌐 1-Click Cloud Deployments
+## 📁 Project Structure
 
-### Option A: Streamlit Community Cloud (Recommended for 1-Click Python)
-1. Go to [share.streamlit.io](https://share.streamlit.io/)
-2. Click **"New app"**
-3. Select Repository: `sechan9999/notePro`, Branch: `main`, Main file path: `streamlit_app.py`
-4. Under Advanced Settings, add `GEMINI_API_KEY` (and optionally `DEEPGRAM_API_KEY`)
-5. Click **"Deploy"**!
-
-### Option B: Vercel (Recommended for Frontend React)
-1. Import repository `sechan9999/notePro` on [vercel.com](https://vercel.com/)
-2. Vercel automatically detects `vercel.json` (Vite preset)
-3. Click **"Deploy"**!
-
----
-
-## 🧪 Running Automated Tests
-```bash
-python -m backend.test_pipeline
-```
-Verifies meeting creation, audio chunk ingestion, and the 3-way fusion engine output.
-
----
-
-## 📁 Repository Structure
 ```
 notePro/
 ├── backend/
-│   ├── main.py              # FastAPI application server
-│   ├── stt_service.py       # Deepgram & Gemini Audio transcription pipeline
-│   ├── fusion_engine.py     # notePro 3-way note fusion prompt engine
-│   ├── test_pipeline.py     # End-to-end integration test
-│   ├── requirements.txt     # Python dependencies
-│   └── data/meetings.json   # Persistent meeting store
-└── frontend/
-    ├── src/
-    │   ├── App.jsx          # Main notePro dual-pane interface
-    │   ├── audioRecorder.js # Web Audio API recorder & volume visualizer
-    │   ├── index.css        # notePro warm dark typography styles
-    │   └── main.jsx         # Vite entrypoint
-    ├── package.json
-    └── vite.config.js
+│   ├── main.py              # FastAPI REST API & sample data seeding
+│   ├── stt_service.py       # Deepgram & Gemini Audio STT pipeline
+│   ├── fusion_engine.py     # Granola 3-way note fusion prompt engine
+│   ├── test_pipeline.py     # Integration test suite
+│   ├── requirements.txt     # Python backend dependencies
+│   └── data/meetings.json   # Persistent JSON file storage
+├── frontend/
+│   ├── src/
+│   │   ├── App.jsx          # Dual-pane workbench, tabs, and client AI fusion
+│   │   ├── audioRecorder.js # Web Audio API mic intake & visualizer
+│   │   ├── index.css        # Typography, warm dark styling & animations
+│   │   └── main.jsx         # React application entry point
+│   ├── package.json
+│   └── vite.config.js
+├── streamlit_app.py         # Streamlit single-file companion application
+├── vercel.json              # Vercel deployment routing configuration
+└── README.md                # Project documentation
 ```
+
+---
+
+## 📄 License
+MIT License © 2026 notePro. Inspired by Granola.ai.
