@@ -69,6 +69,28 @@ npm run dev
 
 Visit **`http://localhost:5173`** in your browser.
 
+### 3. Streamlit Native App (Local & Streamlit Cloud)
+You can also run notePro directly via Streamlit:
+```bash
+streamlit run streamlit_app.py
+```
+
+---
+
+## 🌐 1-Click Cloud Deployments
+
+### Option A: Streamlit Community Cloud (Recommended for 1-Click Python)
+1. Go to [share.streamlit.io](https://share.streamlit.io/)
+2. Click **"New app"**
+3. Select Repository: `sechan9999/notePro`, Branch: `main`, Main file path: `streamlit_app.py`
+4. Under Advanced Settings, add `GEMINI_API_KEY` (and optionally `DEEPGRAM_API_KEY`)
+5. Click **"Deploy"**!
+
+### Option B: Vercel (Recommended for Frontend React)
+1. Import repository `sechan9999/notePro` on [vercel.com](https://vercel.com/)
+2. Vercel automatically detects `vercel.json` (Vite preset)
+3. Click **"Deploy"**!
+
 ---
 
 ## 🧪 Running Automated Tests
