@@ -1,0 +1,72 @@
+:root {
+  --bg-app: #0c0d12;
+  --bg-sidebar: #090a0e;
+  --bg-card: #14161f;
+  --bg-card-hover: #1a1d29;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-focus: rgba(255, 155, 80, 0.4);
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-faint: #64748b;
+  --accent-granola: #ff9b50;
+  --accent-purple: #818cf8;
+  --accent-emerald: #34d399;
+  --accent-rose: #f43f5e;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Animations */
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 0 0 rgba(244, 63, 94, 0.5); }
+  70% { box-shadow: 0 0 0 12px rgba(244, 63, 94, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(244, 63, 94, 0); }
+}
+
+@keyframes waveBar {
+  0%, 100% { height: 6px; }
+  50% { height: 28px; }
+}
+
+.rec-pulse {
+  animation: pulseGlow 1.8s infinite;
+}
+
+.wave-bar {
+  width: 3px;
+  background: var(--accent-rose);
+  border-radius: 2px;
+  display: inline-block;
+  animation: waveBar 1.2s ease-in-out infinite;
+}

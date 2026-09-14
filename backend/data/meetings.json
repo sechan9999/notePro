@@ -1,0 +1,111 @@
+{
+  "sample-sync-01": {
+    "id": "sample-sync-01",
+    "title": "notePro Product & Architecture Sprint Sync",
+    "date": "September 14, 2026 - 03:35 PM",
+    "attendees": [
+      "Sarah (Product Lead)",
+      "David (Lead Eng)",
+      "Alex (UI/UX)",
+      "You (Note Taker)"
+    ],
+    "user_raw_notes": "- Audio pipeline latency check: David reported 320ms on Deepgram Nova-2.\n- Attendees UI: Alex confirmed Figma mockup ready by Thursday 3 PM.\n- Google Calendar OAuth integration scheduled for this sprint.\n- Target launch: v1.2 release window.",
+    "transcript_segments": [
+      {
+        "start": 0.0,
+        "end": 4.5,
+        "speaker": "Sarah (Product Lead)",
+        "text": "Thanks everyone for joining. Today we need to lock down the v1.2 release scope and review current user feedback."
+      },
+      {
+        "start": 5.0,
+        "end": 11.8,
+        "speaker": "David (Lead Eng)",
+        "text": "On the engineering side, the real-time audio pipeline is fully deployed. The Deepgram latency is hovering around 320 milliseconds, which is well within our budget."
+      },
+      {
+        "start": 12.2,
+        "end": 17.5,
+        "speaker": "Sarah (Product Lead)",
+        "text": "Great! Did we decide on whether to include calendar attendee auto-tagging in this sprint?"
+      },
+      {
+        "start": 18.0,
+        "end": 25.5,
+        "speaker": "Alex (UI/UX)",
+        "text": "Yes, we agreed that attendee context should be highlighted on the left pane. I will finalize the Figma specs by this Thursday at 3 PM."
+      },
+      {
+        "start": 26.0,
+        "end": 33.0,
+        "speaker": "David (Lead Eng)",
+        "text": "Action item for me: I will set up the OAuth integration for Google Calendar and make sure we have unit tests covering audio edge cases."
+      }
+    ],
+    "enhanced_notes": null,
+    "status": "completed",
+    "created_at": "2026-09-14T15:35:36.129859"
+  },
+  "m-9d0bc563": {
+    "id": "m-9d0bc563",
+    "title": "Granola Design Review",
+    "date": "September 14, 2026 - 03:35 PM",
+    "attendees": [
+      "Alice (Designer)",
+      "Bob (Engineer)"
+    ],
+    "user_raw_notes": "- Dark mode UI needs high contrast.\n- Meeting recorder should support browser mic.\n- Enhance button in header.",
+    "transcript_segments": [
+      {
+        "start": 0.0,
+        "end": 6.5,
+        "speaker": "Alice",
+        "text": "Let's make sure the audio waveform pulses in real time so the user knows recording is live."
+      }
+    ],
+    "enhanced_notes": {
+      "executive_summary": "The team aligned on the Granola Design Review milestones. Engineering confirmed the audio transcription pipeline meets performance latency requirements, while design and calendar integration specifications were scheduled for completion this week.",
+      "key_decisions": [
+        "Approved v1.2 release scope with real-time audio pipeline enabled.",
+        "Agreed to feature calendar attendee context prominently on the left panel."
+      ],
+      "expanded_topics": [
+        {
+          "topic_title": "Topic: Dark mode UI needs high contrast.",
+          "user_original_intent": "Dark mode UI needs high contrast.",
+          "ai_enrichment": "During the discussion, the team confirmed this priority. Audio transcript indicates strong consensus with benchmark latency confirmed at 320ms and positive preliminary feedback across stakeholders.",
+          "key_quote": "\"Let's make sure the audio waveform pulses in real time so the user knows recording is live.\" — Alice"
+        },
+        {
+          "topic_title": "Topic: Meeting recorder should support bro",
+          "user_original_intent": "Meeting recorder should support browser mic.",
+          "ai_enrichment": "During the discussion, the team confirmed this priority. Audio transcript indicates strong consensus with benchmark latency confirmed at 320ms and positive preliminary feedback across stakeholders.",
+          "key_quote": "\"Let's make sure the audio waveform pulses in real time so the user knows recording is live.\" — Alice"
+        },
+        {
+          "topic_title": "Topic: Enhance button in header.",
+          "user_original_intent": "Enhance button in header.",
+          "ai_enrichment": "During the discussion, the team confirmed this priority. Audio transcript indicates strong consensus with benchmark latency confirmed at 320ms and positive preliminary feedback across stakeholders.",
+          "key_quote": "\"Let's make sure the audio waveform pulses in real time so the user knows recording is live.\" — Alice"
+        }
+      ],
+      "action_items": [
+        {
+          "task": "Finalize Figma specifications for attendee context UI",
+          "owner": "Alex (Design)",
+          "deadline": "This Thursday at 3:00 PM",
+          "context": "Needs approval before client component sprint starts."
+        },
+        {
+          "task": "Configure Google Calendar OAuth integration and write audio edge tests",
+          "owner": "David (Lead Eng)",
+          "deadline": "End of week",
+          "context": "Ensure 320ms audio latency SLA is maintained."
+        }
+      ],
+      "markdown_formatted": "# 📝 Granola Design Review\n**Date:** September 14, 2026 - 03:35 PM | **Attendees:** Alice (Designer), Bob (Engineer)\n\n## ⚡ Executive Summary\nThe team aligned on the Granola Design Review milestones. Engineering confirmed the audio transcription pipeline meets performance latency requirements, while design and calendar integration specifications were scheduled for completion this week.\n\n## 🎯 Key Decisions\n- ✅ **Approved v1.2 release scope with real-time audio pipeline enabled.**\n- ✅ **Agreed to feature calendar attendee context prominently on the left panel.**\n\n## 🔍 Granola AI-Enriched Notes\n### Topic: Dark mode UI needs high contrast.\n> **Your original note:** *\"Dark mode UI needs high contrast.\"*\nDuring the discussion, the team confirmed this priority. Audio transcript indicates strong consensus with benchmark latency confirmed at 320ms and positive preliminary feedback across stakeholders.\n💬 *Quote:* \"Let's make sure the audio waveform pulses in real time so the user knows recording is live.\" — Alice\n\n### Topic: Meeting recorder should support bro\n> **Your original note:** *\"Meeting recorder should support browser mic.\"*\nDuring the discussion, the team confirmed this priority. Audio transcript indicates strong consensus with benchmark latency confirmed at 320ms and positive preliminary feedback across stakeholders.\n💬 *Quote:* \"Let's make sure the audio waveform pulses in real time so the user knows recording is live.\" — Alice\n\n### Topic: Enhance button in header.\n> **Your original note:** *\"Enhance button in header.\"*\nDuring the discussion, the team confirmed this priority. Audio transcript indicates strong consensus with benchmark latency confirmed at 320ms and positive preliminary feedback across stakeholders.\n💬 *Quote:* \"Let's make sure the audio waveform pulses in real time so the user knows recording is live.\" — Alice\n\n## ✅ Action Items\n- [ ] **Finalize Figma specifications for attendee context UI** — 👤 `Alex (Design)` (🗓️ This Thursday at 3:00 PM)\n- [ ] **Configure Google Calendar OAuth integration and write audio edge tests** — 👤 `David (Lead Eng)` (🗓️ End of week)"
+    },
+    "status": "enhanced",
+    "created_at": "2026-09-14T15:35:36.214144"
+  }
+}
